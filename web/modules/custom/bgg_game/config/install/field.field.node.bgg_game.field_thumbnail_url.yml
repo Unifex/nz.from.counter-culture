@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thumbnail_url
+    - node.type.bgg_game
+  module:
+    - link
+id: node.bgg_game.field_thumbnail_url
+field_name: field_thumbnail_url
+entity_type: node
+bundle: bgg_game
+label: 'Thumbnail URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

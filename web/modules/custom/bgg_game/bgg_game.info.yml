@@ -1,0 +1,7 @@
+name: 'BGG Game'
+type: module
+description: 'A Game from the BGG API.'
+core: 8.x
+package: Custom
+dependencies:
+  - menu_ui

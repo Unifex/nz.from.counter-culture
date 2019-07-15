@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_min_play_time
+    - node.type.bgg_game
+id: node.bgg_game.field_min_play_time
+field_name: field_min_play_time
+entity_type: node
+bundle: bgg_game
+label: 'Minimum Play-time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

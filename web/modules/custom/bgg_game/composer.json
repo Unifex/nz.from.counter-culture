@@ -1,0 +1,13 @@
+{
+    "name": "bgg_game",
+    "type": "drupal-module",
+    "description": "A Game from the BGG API.",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/bgg_game",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/bgg_game",
+        "source": "http://cgit.drupalcode.org/bgg_game",
+    },
+}

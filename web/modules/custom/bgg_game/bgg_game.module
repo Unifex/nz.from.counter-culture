@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains bgg_game.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bgg_game_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the bgg_game module.
+    case 'help.page.bgg_game':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('A Game from the BGG API.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function bgg_game_theme() {
+  return [
+    'bgg_game' => [
+      'render element' => 'children',
+    ],
+  ];
+}
