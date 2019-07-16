@@ -8,6 +8,6 @@
     "minimum-stability": "dev",
     "support": {
         "issues": "https://www.drupal.org/project/issues/bgg_game",
-        "source": "http://cgit.drupalcode.org/bgg_game",
-    },
+        "source": "http://cgit.drupalcode.org/bgg_game"
+    }
 }
