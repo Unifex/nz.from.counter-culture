@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Queue\QueueFactory;
+use Drupal\Core\Queue\QueueInterface;
 
 /**
  * Implements hook_help().
@@ -32,4 +34,27 @@ function bgg_game_theme() {
       'render element' => 'children',
     ],
   ];
+}
+
+function bgg_game_cron() {
+  // Get the queue.
+  $queue = \Drupal::queue('bgg_games');
+  // If the queue has items, process them.
+  if ($queue->numberOfItems()) {
+    \Drupal::logger('BGG Game')->notice("Queue has " . $queue->numberOfItems() . " BGG Games.");
+  }
+  // If the queue is empty, populate it.
+  else {
+    // Fetch all bgg_game nids and add them to the queue.
+    $query = \Drupal::entityQuery('node')
+      ->condition('status', 1)
+      ->condition('type', 'bgg_game'); //specify results to return
+    $nids = $query->execute();
+    \Drupal::logger('BGG Game')->notice("Added " . count($nids) . " BGG Games to queue.");
+    foreach ($nids as $nid) {
+      $item = new \stdClass();
+      $item->nid = $nid;
+      $queue->createItem($item);
+    }
+  }
 }
