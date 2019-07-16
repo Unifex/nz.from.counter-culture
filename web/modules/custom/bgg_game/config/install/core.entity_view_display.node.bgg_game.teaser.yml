@@ -4,6 +4,22 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.bgg_game.body
+    - field.field.node.bgg_game.field_average_rating
+    - field.field.node.bgg_game.field_category
+    - field.field.node.bgg_game.field_comment
+    - field.field.node.bgg_game.field_designer
+    - field.field.node.bgg_game.field_image_url
+    - field.field.node.bgg_game.field_max_play_time
+    - field.field.node.bgg_game.field_max_players
+    - field.field.node.bgg_game.field_mechanic
+    - field.field.node.bgg_game.field_min_play_time
+    - field.field.node.bgg_game.field_min_players
+    - field.field.node.bgg_game.field_object_id
+    - field.field.node.bgg_game.field_object_sub_type
+    - field.field.node.bgg_game.field_object_type
+    - field.field.node.bgg_game.field_play_time
+    - field.field.node.bgg_game.field_thumbnail_url
+    - field.field.node.bgg_game.field_year_published
     - node.type.bgg_game
   module:
     - text
@@ -26,4 +42,20 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_average_rating: true
+  field_category: true
+  field_comment: true
+  field_designer: true
+  field_image_url: true
+  field_max_play_time: true
+  field_max_players: true
+  field_mechanic: true
+  field_min_play_time: true
+  field_min_players: true
+  field_object_id: true
+  field_object_sub_type: true
+  field_object_type: true
+  field_play_time: true
+  field_thumbnail_url: true
+  field_year_published: true

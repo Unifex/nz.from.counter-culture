@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.bgg_game
+id: node.bgg_game.title
+field_name: title
+entity_type: node
+bundle: bgg_game
+label: 'BGG ID'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
