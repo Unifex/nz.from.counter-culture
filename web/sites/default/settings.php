@@ -779,6 +779,10 @@ $settings['entity_update_backup'] = TRUE;
 # }
 $config_directories['sync'] = '../config/sync';
 
+// Settings for production.
+if (file_exists($app_root . '/' . $site_path . '/settings.prod.php')) {
+  include $app_root . '/' . $site_path . '/settings.prod.php';
+}
 // Automatically generated include for settings managed by ddev.
 if (file_exists($app_root . '/' . $site_path . '/settings.ddev.php')) {
   include $app_root . '/' . $site_path . '/settings.ddev.php';
