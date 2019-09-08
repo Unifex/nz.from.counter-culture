@@ -1,0 +1,25 @@
+uuid: 8ac6beea-a83c-4816-97c3-e44277467d14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_play_time
+    - node.type.bgg_game
+_core:
+  default_config_hash: 0FFUz9qIzFjVh-9DJzoZsXK0RUDRb_i8vFhGmqqK5-c
+id: node.bgg_game.field_play_time
+field_name: field_play_time
+entity_type: node
+bundle: bgg_game
+label: 'Play time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

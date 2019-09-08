@@ -1,0 +1,25 @@
+uuid: 3757a5b3-7ac5-4cb2-b03a-877c71037adc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_object_id
+    - node.type.bgg_game
+_core:
+  default_config_hash: QyqDNlCdyzE8tySeVwf7kbR_AjqNtKmSaOr4MRybznM
+id: node.bgg_game.field_object_id
+field_name: field_object_id
+entity_type: node
+bundle: bgg_game
+label: 'Object ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,19 @@
+uuid: cc5f2d91-de10-4d90-bf93-0cb87517675d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title
+    - node.type.bgg_game
+id: node.bgg_game.field_title
+field_name: field_title
+entity_type: node
+bundle: bgg_game
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,24 @@
+uuid: 6f1c612d-0094-4214-9350-e3034f206a71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.bgg_game
+  module:
+    - text
+_core:
+  default_config_hash: 5V0eexoy1a3O5i6-GchLALZBaF_B2tjwTImAp-1G7AI
+id: node.bgg_game.body
+field_name: body
+entity_type: node
+bundle: bgg_game
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

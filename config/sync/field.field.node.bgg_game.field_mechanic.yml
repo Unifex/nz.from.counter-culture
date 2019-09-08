@@ -1,0 +1,31 @@
+uuid: 9354d140-b984-4f4a-9271-7286590bd087
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mechanic
+    - node.type.bgg_game
+    - taxonomy.vocabulary.mechanic
+_core:
+  default_config_hash: _p0aoNXO4qpxtec9xe3NCZXOS1IvAljT7YrEr4ZJYNk
+id: node.bgg_game.field_mechanic
+field_name: field_mechanic
+entity_type: node
+bundle: bgg_game
+label: Mechanic
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      mechanic: mechanic
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

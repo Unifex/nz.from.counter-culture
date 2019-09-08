@@ -1,0 +1,31 @@
+uuid: 85c2db81-e732-44ec-a2da-d1b0cae92b89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_designer
+    - node.type.bgg_game
+    - taxonomy.vocabulary.designer
+_core:
+  default_config_hash: 3BnQ0Fs6rBNyCId3r8T6NHq_fQvGQrFOkKBu1kkc_Ww
+id: node.bgg_game.field_designer
+field_name: field_designer
+entity_type: node
+bundle: bgg_game
+label: Designer
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      designer: designer
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

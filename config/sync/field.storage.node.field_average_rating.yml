@@ -1,0 +1,22 @@
+uuid: 1e8d4339-d22d-4041-9b56-ee30df9367a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: eHsaE_sbfhaeMcJQq9SwQEsytL2Bai0C1R6VoXtmQuM
+id: node.field_average_rating
+field_name: field_average_rating
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 5
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

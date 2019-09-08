@@ -1,0 +1,22 @@
+uuid: b2c5ced4-483b-4658-bc29-f40e9607e408
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: LtCEZTLhNpEuqAXgJWwLKUriV9gwZL6qqO2rEywds_Q
+id: node.field_min_play_time
+field_name: field_min_play_time
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

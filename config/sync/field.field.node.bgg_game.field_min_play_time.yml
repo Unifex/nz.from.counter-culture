@@ -1,0 +1,25 @@
+uuid: 43e638fd-ca09-473a-9da1-46eb7e6f1b56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_min_play_time
+    - node.type.bgg_game
+_core:
+  default_config_hash: Yo5PmkqgUpLBnbedKB4hEeSukXei9PeoL9tgmbmTCGs
+id: node.bgg_game.field_min_play_time
+field_name: field_min_play_time
+entity_type: node
+bundle: bgg_game
+label: 'Minimum Play-time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

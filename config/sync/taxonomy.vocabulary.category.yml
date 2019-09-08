@@ -1,0 +1,10 @@
+uuid: c1b1b805-9bb0-4be2-bfb5-a2347fb5f379
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yheySH4HHhrTFF6qIuqv5ySxpHQH9h6KijuU7be4EvM
+name: Category
+vid: category
+description: ''
+weight: 0

@@ -1,0 +1,22 @@
+uuid: da36a2e3-3116-44b9-80b8-96bf9107f8cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: xyPPBAVGPzOCV1GrmsP6X43-gvEzPqRRek-bCcqGN9c
+id: node.field_mechanic
+field_name: field_mechanic
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

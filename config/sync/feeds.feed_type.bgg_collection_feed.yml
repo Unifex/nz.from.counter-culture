@@ -1,0 +1,91 @@
+uuid: 51c6f51f-7e93-4602-a0a3-b424fa85b8eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.bgg_game.title
+    - field.field.node.bgg_game.field_object_sub_type
+    - field.field.node.bgg_game.field_object_type
+    - node.type.bgg_game
+  module:
+    - feeds_ex
+    - node
+label: 'BGG Collection feed'
+id: bgg_collection_feed
+description: 'Import from a Boardgame Geek users collection'
+import_period: 86400
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: xml
+parser_configuration:
+  context:
+    value: //item
+  sources:
+    _number_objectid_:
+      label: number(@objectid)
+      value: number(@objectid)
+    _objecttype:
+      label: '@objecttype'
+      value: '@objecttype'
+    _subtype:
+      label: '@subtype'
+      value: '@subtype'
+  use_tidy: false
+  display_errors: false
+  source_encoding:
+    - auto
+  debug_mode: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  update_existing: 1
+  update_non_existent: node_unpublish_action
+  expire: -1
+  owner_feed_author: true
+  owner_id: 0
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: bgg_game
+custom_sources:
+  _name:
+    label: /name
+    value: /name
+    machine_name: _name
+  _number_objectid_:
+    label: number(@objectid)
+    value: number(@objectid)
+    machine_name: _number_objectid_
+  _objecttype:
+    label: '@objecttype'
+    value: '@objecttype'
+    machine_name: _objecttype
+  _subtype:
+    label: '@subtype'
+    value: '@subtype'
+    machine_name: _subtype
+  yearpublished_text_:
+    label: yearpublished/text()
+    value: yearpublished/text()
+    machine_name: yearpublished_text_
+mappings:
+  -
+    target: title
+    map:
+      value: _number_objectid_
+    unique:
+      value: '1'
+  -
+    target: field_object_type
+    map:
+      value: _objecttype
+    unique: {  }
+  -
+    target: field_object_sub_type
+    map:
+      value: _subtype
+    unique: {  }

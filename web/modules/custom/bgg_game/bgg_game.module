@@ -18,7 +18,7 @@ function bgg_game_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.bgg_game':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('A Game from the BGG API.') . '</p>';
+      $output .= '<p>' . t('Update a Game with full details from the BGG API.') . '</p>';
       return $output;
 
     default:
@@ -36,21 +36,45 @@ function bgg_game_theme() {
   ];
 }
 
+/**
+ * Implements hook_cron().
+ */
 function bgg_game_cron() {
+  /** @var QueueFactory $queue_factory */
+  $queue_factory = \Drupal::service('queue');
+  /** @var QueueInterface $queue */
+  $queue = $queue_factory->get('bgg_games');
+
+  $logger = \Drupal::logger('BGG Game');
+
   // Get the queue.
-  $queue = \Drupal::queue('bgg_games');
+  if (\Drupal::state()->get(__FUNCTION__ . '_clear_queue', FALSE)) {
+    $queue->deleteQueue();
+    \Drupal::state()->delete(__FUNCTION__ . '_clear_queue');
+    $logger->notice('deleted queue');
+    return;
+  }
+
   // If the queue has items, process them.
   if ($queue->numberOfItems()) {
-    \Drupal::logger('BGG Game')->notice("Queue has " . $queue->numberOfItems() . " BGG Games.");
+    $logger->notice("Queue has " . $queue->numberOfItems() . " BGG Games.");
+    $bgg = \Drupal::service('bgg_game.update_game_from_bgg');
+
+    $item = $queue->claimItem();
+    if ($bgg->update((int) $item->data->nid)) {
+      $queue->deleteItem($item);
+    }
+    else {
+      $queue->releaseItem($item);
+    }
   }
   // If the queue is empty, populate it.
   else {
     // Fetch all bgg_game nids and add them to the queue.
     $query = \Drupal::entityQuery('node')
-      ->condition('status', 1)
       ->condition('type', 'bgg_game'); //specify results to return
     $nids = $query->execute();
-    \Drupal::logger('BGG Game')->notice("Added " . count($nids) . " BGG Games to queue.");
+    $logger->notice("Added " . count($nids) . " BGG Games to queue.");
     foreach ($nids as $nid) {
       $item = new \stdClass();
       $item->nid = $nid;
@@ -58,3 +82,53 @@ function bgg_game_cron() {
     }
   }
 }
+
+// /**
+//  * Update a BGG Game node from BGG API.
+//  * 
+//  * @param object $item
+//  *   A nid. In an object.
+//  * @return bool
+//  *   TRUE on success
+//  */
+// function bgg_game_update_from_bgg($item) {
+//   $logger = \Drupal::logger('BGG Game');
+//   $logger->notice("Processing " . $item->nid);
+
+//   $bgg = \Drupal::service('bgg_game.update_game_from_bgg');
+//   if ($bgg->update((int) $item->nid)) {
+//     $item->delete();
+//   }
+//   else {
+//     $item->
+//   }
+
+//   // Fetch the Node.
+//   /** @var NodeInterface $node */
+//   if ($node = \Drupal\node\Entity\Node::load((int) $item->nid)) {
+//     // // Fetch the Game from the BGG API.
+//     // $bggid = $node->getTitle();
+//     // $logger->notice('bggid: ' . print_r($bggid, 1));
+//     // $url = "https://boardgamegeek.com/xmlapi2/thing?id=" . $bggid;
+//     // $client = \Drupal::httpClient();
+//     // $request = $client->get($url);
+//     // $logger->notice("Status Code: " . print_r($request->getStatusCode(), 1));
+//     // $logger->notice("Request: " . print_r($request, 1));
+//     // $body = $request->getBody()->getContents();
+//     // $logger->notice("Body: " . print_r($body, 1));
+//     // #$xmlDecoder = \Drupal::get('serializer');
+//     // //$xmlDecoder = new XmlEncoder();
+//     // #$game = $xmlDecoder->decode($body);
+//     // $p = xml_parser_create();
+//     // xml_parse_into_struct($p, $body, $vals, $index);
+//     // xml_parser_free($p);
+//     // #$logger->notice("Game: " . print_r($game, 1));
+//     // //$logger->notice("index: " . print_r($index, 1));
+//     // //$logger->notice("vals: " . print_r($vals, 1));
+//     return TRUE;
+//   }
+//   else {
+//     $logger->error("Unable to fetch node $nid");
+//     return FALSE;
+//   }
+// }

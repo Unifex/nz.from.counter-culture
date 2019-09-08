@@ -3,6 +3,7 @@
 .ddev/
 /drush/
 /vendor/
+/web/.vscode
 /web/core/
 /web/modules/contrib/
 /web/themes/contrib/
@@ -51,3 +52,5 @@ regression_report_html
 regression_report
 test_suite/local
 
+# DDev
+/web/sites/default/ddev_drush_settings.php

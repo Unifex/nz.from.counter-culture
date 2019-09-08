@@ -1,0 +1,20 @@
+uuid: e326e7f8-136a-4a98-9f14-4b5cf20d3313
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_year_published
+field_name: field_year_published
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

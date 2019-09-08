@@ -1,0 +1,66 @@
+uuid: 397bbb61-62c4-4361-80a8-d4555125b793
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.bgg_game.body
+    - field.field.node.bgg_game.feeds_item
+    - field.field.node.bgg_game.field_average_rating
+    - field.field.node.bgg_game.field_category
+    - field.field.node.bgg_game.field_comment
+    - field.field.node.bgg_game.field_designer
+    - field.field.node.bgg_game.field_image_url
+    - field.field.node.bgg_game.field_max_play_time
+    - field.field.node.bgg_game.field_max_players
+    - field.field.node.bgg_game.field_mechanic
+    - field.field.node.bgg_game.field_min_play_time
+    - field.field.node.bgg_game.field_min_players
+    - field.field.node.bgg_game.field_object_id
+    - field.field.node.bgg_game.field_object_sub_type
+    - field.field.node.bgg_game.field_object_type
+    - field.field.node.bgg_game.field_play_time
+    - field.field.node.bgg_game.field_thumbnail_url
+    - field.field.node.bgg_game.field_title
+    - node.type.bgg_game
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: jxpahnVk0mPEBF1PBeJNuCsctVSV-m_TwT_uV76AW1s
+id: node.bgg_game.teaser
+targetEntityType: node
+bundle: bgg_game
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  feeds_item: true
+  field_average_rating: true
+  field_category: true
+  field_comment: true
+  field_designer: true
+  field_image_url: true
+  field_max_play_time: true
+  field_max_players: true
+  field_mechanic: true
+  field_min_play_time: true
+  field_min_players: true
+  field_object_id: true
+  field_object_sub_type: true
+  field_object_type: true
+  field_play_time: true
+  field_thumbnail_url: true
+  field_title: true

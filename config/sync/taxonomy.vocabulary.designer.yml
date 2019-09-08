@@ -1,0 +1,10 @@
+uuid: 169e0c02-3644-4c0c-9ed5-d585f2c1c4ec
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: kaXO41BOgR5SiW2sUpRx6e0OPrplGtfFzrH2REy8_lk
+name: Designer
+vid: designer
+description: ''
+weight: 0

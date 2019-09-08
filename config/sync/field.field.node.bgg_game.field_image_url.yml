@@ -1,0 +1,25 @@
+uuid: b09d60ee-c055-464a-a524-fcd64fcb3a01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_url
+    - node.type.bgg_game
+  module:
+    - link
+_core:
+  default_config_hash: hSt1pVOa4GbHLrNcVPvGq1EljWEhLO8bkYMTEOE2CRM
+id: node.bgg_game.field_image_url
+field_name: field_image_url
+entity_type: node
+bundle: bgg_game
+label: 'Image URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

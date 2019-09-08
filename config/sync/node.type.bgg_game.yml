@@ -1,0 +1,19 @@
+uuid: b51f7ff7-9290-471f-909a-fee422c008bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: bUmerEKLkqnewB4wvwPLsq3E8A78NxhboR5enn0l5MM
+name: 'BGG Game'
+type: bgg_game
+description: 'A game from Boardgame Geek.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

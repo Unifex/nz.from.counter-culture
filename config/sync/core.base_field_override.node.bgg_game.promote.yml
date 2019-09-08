@@ -1,0 +1,24 @@
+uuid: 59aa8d38-90e4-486f-8831-15e88e160bec
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.bgg_game
+_core:
+  default_config_hash: k4UV7Wr1KtPUOlW085GEJHqHGqHknZ29oKu3pn5ONoQ
+id: node.bgg_game.promote
+field_name: promote
+entity_type: node
+bundle: bgg_game
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

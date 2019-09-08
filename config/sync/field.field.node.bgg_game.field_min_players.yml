@@ -1,0 +1,25 @@
+uuid: 7568b58c-a168-4733-ad4c-6be81c66d394
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_min_players
+    - node.type.bgg_game
+_core:
+  default_config_hash: Y_bmhCg_7Hi06TN08Yftjz1D13ZWNs94G3RNTR-moys
+id: node.bgg_game.field_min_players
+field_name: field_min_players
+entity_type: node
+bundle: bgg_game
+label: 'Minimum Players'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

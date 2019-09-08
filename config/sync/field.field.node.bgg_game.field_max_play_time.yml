@@ -1,0 +1,25 @@
+uuid: 6a48ad93-1fae-421e-95e6-064666542f3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_max_play_time
+    - node.type.bgg_game
+_core:
+  default_config_hash: BHgd_7RkSahYyytyjh9JmpjyPJT7MHBd8ziDR3g5fcY
+id: node.bgg_game.field_max_play_time
+field_name: field_max_play_time
+entity_type: node
+bundle: bgg_game
+label: 'Maximum Play-time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

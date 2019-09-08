@@ -1,0 +1,25 @@
+uuid: 2f0be150-5d5e-452a-95d4-b2dd8adc8ad7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_max_players
+    - node.type.bgg_game
+_core:
+  default_config_hash: 1sXNKxeUCGBbzfvvKgd3fcDwsNQf4PuCs8Zobl3iZco
+id: node.bgg_game.field_max_players
+field_name: field_max_players
+entity_type: node
+bundle: bgg_game
+label: 'Maximum Players'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

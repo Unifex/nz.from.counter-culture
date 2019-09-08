@@ -1,0 +1,21 @@
+uuid: 6cc5b39e-f54f-4be0-9b4e-46dbd3caef63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_object_sub_type
+    - node.type.bgg_game
+_core:
+  default_config_hash: v1iCp5S_EZJwOoxH_8Wi7filXETR598vN0DEVg4jAKw
+id: node.bgg_game.field_object_sub_type
+field_name: field_object_sub_type
+entity_type: node
+bundle: bgg_game
+label: 'Object Sub-type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

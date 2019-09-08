@@ -1,0 +1,31 @@
+uuid: d04cf1c5-b37c-487b-a801-eecb097b99e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_category
+    - node.type.bgg_game
+    - taxonomy.vocabulary.category
+_core:
+  default_config_hash: k0gIM823Rt4Wg3q4tgYtbrzl0-XOYV1CJBrt6njb5jc
+id: node.bgg_game.field_category
+field_name: field_category
+entity_type: node
+bundle: bgg_game
+label: Category
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      category: category
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

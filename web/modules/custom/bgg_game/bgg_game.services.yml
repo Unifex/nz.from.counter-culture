@@ -1,0 +1,7 @@
+services:
+  bgg_game.update_game_from_bgg:
+    class: Drupal\bgg_game\UpdateGameFromBgg
+    arguments: [
+      '@http_client',
+      '@entity_type.manager',
+      '@logger.factory']

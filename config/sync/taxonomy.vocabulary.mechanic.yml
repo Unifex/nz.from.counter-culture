@@ -1,0 +1,10 @@
+uuid: 7feed424-fd68-44e9-9d91-c65d8523c2dd
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 6_QbuElt86ufg-b0ka9U0j64WFGS8uQGgyCnkGUB8lQ
+name: Mechanic
+vid: mechanic
+description: ''
+weight: 0

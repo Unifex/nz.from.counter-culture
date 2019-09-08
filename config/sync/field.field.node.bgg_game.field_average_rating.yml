@@ -1,0 +1,25 @@
+uuid: 8ac29306-d393-41bb-8fd9-274262c108d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_average_rating
+    - node.type.bgg_game
+_core:
+  default_config_hash: jfB9P9nC6gIQp4m_DtbgXMjGOi_W1oRAp0_txkpN40M
+id: node.bgg_game.field_average_rating
+field_name: field_average_rating
+entity_type: node
+bundle: bgg_game
+label: 'Average Rating'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal
