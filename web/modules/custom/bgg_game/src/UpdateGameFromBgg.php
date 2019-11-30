@@ -85,8 +85,8 @@ class UpdateGameFromBgg {
     $xml = $decoder->decode($body, 'xml');
     $this_game = $xml['item'];
     $name = '';
-    if (count($this_game['name']) == 1) {
-      $name = $this_game['name'][0]['@value'];
+    if (!empty($this_game['name']['@value'])) {
+      $name = $this_game['name']['@value'];
     }
     elseif (count($this_game['name']) > 1) {
       foreach($this_game['name'] as $item) {
