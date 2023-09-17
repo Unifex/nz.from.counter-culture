@@ -54,3 +54,6 @@ test_suite/local
 
 # DDev
 /web/sites/default/ddev_drush_settings.php
+
+# Local shit.
+fromnz.ddev.id_rsa
